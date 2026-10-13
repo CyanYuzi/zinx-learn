@@ -22,7 +22,7 @@ func main() {
 
 	for {
 		//链接调用
-		_, err := conn.Write([]byte("hello zinx V0.1"))
+		_, err := conn.Write([]byte("hello zinx V0.2"))
 		if err != nil {
 			fmt.Println("client conn error:", err)
 			return
@@ -35,7 +35,7 @@ func main() {
 			return
 		}
 
-		fmt.Printf("server call back: %s,cnt=%d\n", buf, cnt)
+		fmt.Printf("server call back: %s,cnt=%d\n", buf[:cnt], cnt)
 
 		time.Sleep(1 * time.Second)
 	}
